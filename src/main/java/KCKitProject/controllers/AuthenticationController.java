@@ -47,7 +47,6 @@ public class AuthenticationController {
     @GetMapping("/register")
     public String displayRegistrationForm(Model model) {
         model.addAttribute(new RegisterDTO());
-        model.addAttribute("title", "Register");
         return "register";
     }
 
@@ -57,7 +56,6 @@ public class AuthenticationController {
                                           Model model) {
 
         if (errors.hasErrors()) {
-            model.addAttribute("title", "Register");
             return "register";
         }
 
