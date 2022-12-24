@@ -6,11 +6,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/home")
-public class IndexController {
+@RequestMapping("/about")
+public class AboutController {
 
     @GetMapping
-    public String homePage(){
-        return "index";
+    public String about(){
+        return "about";
     }
 }

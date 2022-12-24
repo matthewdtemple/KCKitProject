@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
-<head>
-    <meta charset="UTF-8">
-    <title>Login</title>
-</head>
-<body>
+<head th:replace="fragments :: head"></head>
+
+<body class="container">
+<header th:replace="fragments :: header"></header>
 
 <form method="post">
     <div class="form-group">
-        <label th:for="username"> Username
-            <input th:field = "${loginDTO.username}">
+        <label th:for="username">Username
+            <input class="form-control" th:field="${loginDTO.username}">
         </label>
         <p class="error" th:errors="${loginDTO.username}"></p>
     </div>
