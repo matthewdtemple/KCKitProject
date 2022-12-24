@@ -90,7 +90,7 @@ public class AuthenticationController {
     }
 
     @PostMapping("/login")
-    public String processLoginForm(@ModelAttribute @Valid LoginDTO loginFormDTO,
+    public String processLoginForm(@ModelAttribute @Valid LoginDTO loginDTO,
                                    Errors errors, HttpServletRequest request,
                                    Model model) {
 
@@ -99,7 +99,7 @@ public class AuthenticationController {
             return "login";
         }
 
-        User theUser = userRepository.findByUsername(loginFormDTO.getUsername());
+        User theUser = userRepository.findByUsername(loginDTO.getUsername());
 
         if (theUser == null) {
             errors.rejectValue("username", "user.invalid", "The given username does not exist");
@@ -107,7 +107,7 @@ public class AuthenticationController {
             return "login";
         }
 
-        String password = loginFormDTO.getPassword();
+        String password = loginDTO.getPassword();
 
         if (!theUser.isMatchingPassword(password)) {
             errors.rejectValue("password", "password.invalid", "Invalid password");
