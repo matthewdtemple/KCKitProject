@@ -3,8 +3,10 @@ package KCKitProject.models;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.List;
 
 @Entity
 public class CatColony {
@@ -22,21 +24,27 @@ public class CatColony {
     private int numCatsInColony;
     @NotNull
     private boolean isPrivateProperty;
+    @ManyToOne
+    private List<CatShelter> catShelter;
 
 
     public CatColony(){};
 
-    public CatColony(String address, String description, int numCatsInColony, boolean isPrivateProperty) {
+    public CatColony(String address, String description, int numCatsInColony, boolean isPrivateProperty, List<CatShelter> catShelter) {
         this.address = address;
         this.description = description;
         this.numCatsInColony = numCatsInColony;
         this.isPrivateProperty = isPrivateProperty;
+        this.catShelter = catShelter;
     }
 
     public int getId() {
         return id;
     }
 
+    public List<CatShelter> getCatShelter() {
+        return catShelter;
+    }
 
     public String getAddress() {
         return address;
