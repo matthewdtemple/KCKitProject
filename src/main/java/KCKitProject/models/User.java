@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 public class User {
@@ -15,6 +16,7 @@ public class User {
     @GeneratedValue
     private int id;
     @NotNull
+    @Size(min = 3, max = 30, message = "Must be between 3 and 30 characters")
     private String username;
     @NotNull
     private String pwHash;
@@ -34,10 +36,6 @@ public class User {
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getUsername() {
