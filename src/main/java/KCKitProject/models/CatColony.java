@@ -29,6 +29,8 @@ public class CatColony {
 
     private boolean isPrivateProperty;
 
+    private boolean needsShelter;
+
     @OneToMany
     private List<CatShelter> catShelter = new ArrayList<>();
 
@@ -85,5 +87,13 @@ public class CatColony {
 
     public void setCatShelter(List<CatShelter> catShelter) {
         this.catShelter = catShelter;
+    }
+
+    public boolean isNeedsShelter() {
+        return needsShelter;
+    }
+
+    public void setNeedsShelter(boolean needsShelter) {
+        this.needsShelter = needsShelter;
     }
 }
