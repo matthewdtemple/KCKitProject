@@ -1,6 +1,9 @@
 package KCKitProject.models;
 
+import org.springframework.format.annotation.NumberFormat;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.ArrayList;
@@ -12,16 +15,20 @@ public class CatColony {
     @Id
     @GeneratedValue
     private int id;
-    @NotNull
+
+    @NotBlank
     @Size(min = 5, max = 100, message = "Must be between 5 and 100 characters")
     private String address;
-    @NotNull
+
+    @NotBlank
     @Size(min = 5, max = 200, message = "Must be between 5 and 200 characters")
-    private String description;
+    private String locationDescription;
+
     @NotNull
     private int numCatsInColony;
-    @NotNull
+
     private boolean isPrivateProperty;
+
     @OneToMany
     private List<CatShelter> catShelter = new ArrayList<>();
 
@@ -30,7 +37,7 @@ public class CatColony {
 
     public CatColony(String address, String description, int numCatsInColony, boolean isPrivateProperty, List<CatShelter> catShelter) {
         this.address = address;
-        this.description = description;
+        this.locationDescription = description;
         this.numCatsInColony = numCatsInColony;
         this.isPrivateProperty = isPrivateProperty;
         this.catShelter = catShelter;
@@ -52,12 +59,12 @@ public class CatColony {
         this.address = address;
     }
 
-    public String getDescription() {
-        return description;
+    public String getLocationDescription() {
+        return locationDescription;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setLocationDescription(String locationDescription) {
+        this.locationDescription = locationDescription;
     }
 
     public boolean isPrivateProperty() {
@@ -66,5 +73,17 @@ public class CatColony {
 
     public void setPrivateProperty(boolean privateProperty) {
         isPrivateProperty = privateProperty;
+    }
+
+    public int getNumCatsInColony() {
+        return numCatsInColony;
+    }
+
+    public void setNumCatsInColony(int numCatsInColony) {
+        this.numCatsInColony = numCatsInColony;
+    }
+
+    public void setCatShelter(List<CatShelter> catShelter) {
+        this.catShelter = catShelter;
     }
 }
