@@ -33,7 +33,6 @@ public class CatColony {
 
     @OneToMany
     private List<CatShelter> catShelter = new ArrayList<>();
-// comment to test git push
 
     public CatColony(){};
 
