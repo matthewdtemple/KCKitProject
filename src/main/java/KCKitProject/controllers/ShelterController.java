@@ -21,13 +21,13 @@ public class ShelterController {
     @GetMapping("createshelter")
     public String createShelterHome(Model model){
         model.addAttribute("shelter", new CatShelter());
-        return "add";
+        return "shelter/create";
     }
 
     @PostMapping("createshelter")
     public String addShelter(@ModelAttribute @Valid CatShelter newCatShelter, Errors errors){
         if (errors.hasErrors()) {
-        return "createshelter";
+        return "shelter/create";
         }
 
         catShelterRepository.save(newCatShelter);
