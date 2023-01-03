@@ -32,5 +32,43 @@ public class CatShelter {
 
     public CatShelter(){};
 
+    public String getShelterLocationDescription() {
+        return shelterLocationDescription;
+    }
 
+    public void setShelterLocationDescription(String shelterLocationDescription) {
+        this.shelterLocationDescription = shelterLocationDescription;
+    }
+
+    public boolean isInsulated() {
+        return isInsulated;
+    }
+
+    public void setInsulated(boolean insulated) {
+        isInsulated = insulated;
+    }
+
+    public boolean isHasStraw() {
+        return hasStraw;
+    }
+
+    public void setHasStraw(boolean hasStraw) {
+        this.hasStraw = hasStraw;
+    }
+
+    public boolean isNeedsRepair() {
+        return needsRepair;
+    }
+
+    public void setNeedsRepair(boolean needsRepair) {
+        this.needsRepair = needsRepair;
+    }
+
+    public String getNeededRepairDescription() {
+        return neededRepairDescription;
+    }
+
+    public void setNeededRepairDescription(String neededRepairDescription) {
+        this.neededRepairDescription = neededRepairDescription;
+    }
 }

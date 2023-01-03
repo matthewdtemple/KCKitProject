@@ -9,21 +9,21 @@
 
     <div class="form-group">
         <label>Shelter Location Description
-            <input type="checkbox" class="form-control" th:field="${shelter.shelterLocationDescription}">
+            <input type="checkbox" name="shelterLocationDescription" th:value="${shelter.shelterLocationDescription}">
         </label>
         <p th:errors="${shelter.shelterLocationDescription}"></p>
     </div>
 
     <div class="form-group">
         <label>Is the Shelter Insulated?
-            <input type="checkbox" class="form-control" th:field="${shelter.isInsulated}">
+            <input type="checkbox" name="isInsulated" th:value="${shelter.isInsulated}">
         </label>
         <p th:errors="${shelter.isInsulated}"></p>
     </div>
 
     <div class="form-group">
         <label>Does the shelter have a straw bedding?
-            <input type="checkbox" class="form-control" th:field="${shelter.hasStraw}">
+            <input type="checkbox" name="hasStraw" th:value="${shelter.hasStraw}">
         </label>
         <p th:errors="${shelter.hasStraw}"></p>
     </div>
