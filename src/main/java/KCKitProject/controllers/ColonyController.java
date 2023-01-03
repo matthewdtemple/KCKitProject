@@ -23,7 +23,7 @@ public class ColonyController {
 
 
     @GetMapping("createcolony")
-    public String create(Model model){
+    public String createColonyHome(Model model){
         model.addAttribute("colony",new CatColony());
         return "colony/create";
     }
