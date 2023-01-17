@@ -30,6 +30,8 @@ public class User {
         this.pwHash = encoder.encode(password);
     }
 
+    // comment test for git push
+
     private static final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
     public boolean isMatchingPassword(String password) {
