@@ -9,7 +9,7 @@
 
     <div class="form-group">
         <label>Colony Address
-            <input class="form-control" th:field="${colony.address}">
+            <input th:field="${colony.address}" class="form-control">
         </label>
         <p th:errors="${colony.address}"></p>
     </div>
@@ -32,7 +32,7 @@
         <label> Is the property on private property?
             <input class="form-control" th:field="${colony.isPrivateProperty}">
         </label>
-        <p th:errors="${colony.isPrivateProperty}"></p>
+        <p th:errors="${colony.isPrivateProperty}" ></p>
     </div>
 
     <input type="submit" value="Create Colony" />
