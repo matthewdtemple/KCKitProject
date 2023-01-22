@@ -70,12 +70,12 @@ public class CatColony {
         this.locationDescription = locationDescription;
     }
 
-    public String isPrivateProperty() {
+    public String getIsPrivateProperty() {
         return isPrivateProperty;
     }
 
-    public void setPrivateProperty(String privateProperty) {
-        isPrivateProperty = privateProperty;
+    public void setIsPrivateProperty(String isPrivateProperty) {
+        this.isPrivateProperty = isPrivateProperty;
     }
 
     public int getNumCatsInColony() {
