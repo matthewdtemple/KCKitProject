@@ -28,7 +28,7 @@ public class CatColony {
     private int numCatsInColony;
 
     @NotBlank
-    @Size(min = 5, max = 5, message = "Must be between 2 and 5 characters")
+    @Size(min = 5, max = 100, message = "Must be between 2 and 100 characters")
     private String isPrivateProperty;
 
     private boolean needsShelter;
