@@ -27,7 +27,9 @@ public class CatColony {
     @NotNull
     private int numCatsInColony;
 
-    private boolean isPrivateProperty;
+    @NotBlank
+    @Size(min = 5, max = 100, message = "Must be between 2 and 100 characters")
+    private String isPrivateProperty;
 
     private boolean needsShelter;
 
@@ -36,7 +38,7 @@ public class CatColony {
 
     public CatColony(){};
 
-    public CatColony(String address, String description, int numCatsInColony, boolean isPrivateProperty, List<CatShelter> catShelter) {
+    public CatColony(String address, String description, int numCatsInColony, String isPrivateProperty, List<CatShelter> catShelter) {
         this.address = address;
         this.locationDescription = description;
         this.numCatsInColony = numCatsInColony;
@@ -68,12 +70,12 @@ public class CatColony {
         this.locationDescription = locationDescription;
     }
 
-    public boolean isPrivateProperty() {
+    public String getIsPrivateProperty() {
         return isPrivateProperty;
     }
 
-    public void setPrivateProperty(boolean privateProperty) {
-        isPrivateProperty = privateProperty;
+    public void setIsPrivateProperty(String isPrivateProperty) {
+        this.isPrivateProperty = isPrivateProperty;
     }
 
     public int getNumCatsInColony() {

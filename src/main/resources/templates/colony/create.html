@@ -9,29 +9,30 @@
 
     <div class="form-group">
         <label>Colony Address
-            <input class="form-control" th:field="${colony.address}">
+            <input name="address" th:field="${colony.address}" class="form-control">
         </label>
         <p th:errors="${colony.address}"></p>
     </div>
 
     <div class="form-group">
         <label>Describe the colony location
-            <input class="form-control" th:field="${colony.locationDescription}">
+            <input name="locationDescription" th:field="${colony.locationDescription}" class="form-control">
         </label>
         <p th:errors="${colony.locationDescription}"></p>
     </div>
 
     <div class="form-group">
         <label>Est. cats in colony
-            <input class="form-control" th:field="${colony.numCatsInColony}">
+            <input name="numCatsInColony" th:field="${colony.numCatsInColony}" class="form-control">
         </label>
         <p th:errors="${colony.numCatsInColony}"></p>
     </div>
 
     <div class="form-group">
-        <label th:for="isPrivateProperty">Please check the box if the colony is located on private property
-            <input type="checkbox" name="isPrivateProperty" th:value="true">
+        <label> Is the property on private property?
+            <input name="isPrivateProperty" th:field="${colony.isPrivateProperty}" class="form-control">
         </label>
+        <p th:errors="${colony.isPrivateProperty}"></p>
     </div>
 
     <input type="submit" value="Create Colony" />
