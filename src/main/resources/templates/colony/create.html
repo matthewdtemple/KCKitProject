@@ -29,9 +29,10 @@
     </div>
 
     <div class="form-group">
-        <label th:for="isPrivateProperty">Please check the box if the colony is located on private property
-            <input type="checkbox" name="isprivateProperty" th:value="Yes">
+        <label> Is the property on private property?
+            <input class="form-control" th:field="${colony.isPrivateProperty}">
         </label>
+        <p th:errors="${colony.isPrivateProperty}"></p>
     </div>
 
     <input type="submit" value="Create Colony" />
