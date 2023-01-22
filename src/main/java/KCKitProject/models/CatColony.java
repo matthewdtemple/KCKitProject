@@ -27,7 +27,7 @@ public class CatColony {
     @NotNull
     private int numCatsInColony;
 
-    private boolean isPrivateProperty;
+    private String isPrivateProperty;
 
     private boolean needsShelter;
 
@@ -36,7 +36,7 @@ public class CatColony {
 
     public CatColony(){};
 
-    public CatColony(String address, String description, int numCatsInColony, boolean isPrivateProperty, List<CatShelter> catShelter) {
+    public CatColony(String address, String description, int numCatsInColony, String isPrivateProperty, List<CatShelter> catShelter) {
         this.address = address;
         this.locationDescription = description;
         this.numCatsInColony = numCatsInColony;
@@ -68,11 +68,11 @@ public class CatColony {
         this.locationDescription = locationDescription;
     }
 
-    public boolean isPrivateProperty() {
+    public String isPrivateProperty() {
         return isPrivateProperty;
     }
 
-    public void setPrivateProperty(boolean privateProperty) {
+    public void setPrivateProperty(String privateProperty) {
         isPrivateProperty = privateProperty;
     }
 
