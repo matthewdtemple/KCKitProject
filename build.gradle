@@ -21,6 +21,7 @@ dependencies {
 	implementation 'mysql:mysql-connector-java'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'com.google.maps:google-maps-services:0.44.0'
 
 
 

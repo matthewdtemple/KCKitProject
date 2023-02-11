@@ -43,7 +43,6 @@ public class ColonyController {
         model.addAttribute("colonies",catColonyRepository.findAll());
         return "colony/list";
     }
-// test comment
 
 }
 
