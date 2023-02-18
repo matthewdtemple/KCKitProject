@@ -1,5 +1,7 @@
 package KCKitProject.models;
 
+//Entity?
+
 class MapPoint {
     private double lat;
     private double lng;
