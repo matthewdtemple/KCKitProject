@@ -13,6 +13,9 @@ import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import org.json.JSONObject;
+
+
 
 @Entity
 public class CatColony {
@@ -46,20 +49,20 @@ public class CatColony {
     private float longitude;
 
     // working on import of jsonobject and google api
-    public static void getLatLng(String address) throws IOException {
-        String url = "https://maps.googleapis.com/maps/api/geocode/json?address=" + address + "&key=";
-        URLConnection connection = new URL(url).openConnection();
-        connection.setRequestProperty("Accept-Charset", "UTF-8");
-        Scanner scanner = new Scanner(connection.getInputStream());
-        String response = scanner.useDelimiter("\\A").next();
-        scanner.close();
-        String jsonObject = new String(response);
-        double lat = jsonObject.getJSONArray("results").getJSONObject(0).getJSONObject("geometry")
-                .getJSONObject("location").getDouble("lat");
-        double lng = jsonObject.getJSONArray("results").getJSONObject(0).getJSONObject("geometry")
-                .getJSONObject("location").getDouble("lng");
-        return new double[]{lat, lng};
-    }
+//    public static void getLatLng(String address) throws IOException {
+//        String url = "https://maps.googleapis.com/maps/api/geocode/json?address=" + address + "&key=";
+//        URLConnection connection = new URL(url).openConnection();
+//        connection.setRequestProperty("Accept-Charset", "UTF-8");
+//        Scanner scanner = new Scanner(connection.getInputStream());
+//        String response = scanner.useDelimiter("\\A").next();
+//        scanner.close();
+//        String strResponse = new String(response);
+//        double lat = JSONObject.getJSONArray("results").getJSONObject(0).getJSONObject("geometry")
+//                .getJSONObject("location").getDouble("lat");
+//        double lng = JSONObject.getJSONArray("results").getJSONObject(0).getJSONObject("geometry")
+//                .getJSONObject("location").getDouble("lng");
+//        return new double[]{lat, lng};
+//    }
 
     public CatColony(){};
 
