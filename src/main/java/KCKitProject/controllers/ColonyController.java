@@ -24,18 +24,17 @@ public class ColonyController {
 
     @GetMapping("createcolony")
     public String createColonyHome(Model model){
-        model.addAttribute("colony",new CatColony());
+        model.addAttribute("colony", new CatColony());
         return "colony/create";
     }
 
     @PostMapping("createcolony")
-    public String addColony(@ModelAttribute @Valid CatColony newCatColony, Errors errors){
+    public String addColony(@ModelAttribute @Valid CatColony newCatColony, Errors errors, Model model){
         if (errors.hasErrors()) {
             return "colony/create";
         }
-
         catColonyRepository.save(newCatColony);
-        return "redirect:";
+        return "colony/list";
     }
 
     @GetMapping("list")
