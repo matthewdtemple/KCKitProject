@@ -33,4 +33,9 @@ public class ShelterController {
         catShelterRepository.save(newCatShelter);
         return "redirect:";
     }
+
+    @GetMapping("buildshelter")
+    public String buildShelter(){
+        return "shelter/build";
+    }
 }
