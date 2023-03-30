@@ -34,7 +34,7 @@ public class ColonyController {
             return "colony/create";
         }
         catColonyRepository.save(newCatColony);
-        return "colony/list";
+        return "redirect:";
     }
 
     @GetMapping("list")
