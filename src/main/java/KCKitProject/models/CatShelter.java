@@ -16,7 +16,7 @@ public class CatShelter {
     private int id;
 
     @NotNull
-    @Size(min = 5, max = 200, message = "Must be between 5 and 200 characters")
+    @Size(min = 1, max = 200, message = "Must be between 5 and 200 characters")
     private String shelterLocationDescription;
 
     @NotNull

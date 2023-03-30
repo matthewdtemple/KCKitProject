@@ -25,18 +25,18 @@ public class CatColony {
     private int id;
 
     @NotBlank
-    @Size(min = 5, max = 100, message = "Must be between 5 and 100 characters")
+    @Size(min = 1, max = 100, message = "Must be between 5 and 100 characters")
     private String address;
 
     @NotBlank
-    @Size(min = 5, max = 200, message = "Must be between 5 and 200 characters")
+    @Size(min = 1, max = 200, message = "Must be between 5 and 200 characters")
     private String locationDescription;
 
     @NotNull
     private int numCatsInColony;
 
     @NotBlank
-    @Size(min = 5, max = 100, message = "Must be between 2 and 100 characters")
+    @Size(min = 1, max = 100, message = "Must be between 2 and 100 characters")
     private String isPrivateProperty;
 
     private boolean needsShelter;
@@ -64,15 +64,16 @@ public class CatColony {
 //        return new double[]{lat, lng};
 //    }
 
-    public CatColony(){};
 
     public CatColony(String address, String description, int numCatsInColony, String isPrivateProperty, List<CatShelter> catShelter) {
+        this();
         this.address = address;
         this.locationDescription = description;
         this.numCatsInColony = numCatsInColony;
         this.isPrivateProperty = isPrivateProperty;
         this.catShelter = catShelter;
     }
+    public CatColony(){};
 
     public int getId() {
         return id;

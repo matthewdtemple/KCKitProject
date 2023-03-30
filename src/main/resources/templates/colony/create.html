@@ -8,28 +8,28 @@
 <form method = "post">
     <div class="form-group">
         <label>Colony Address
-            <input type="text" name="address" th:field="*{colony.address}" class="form-control">
+            <input type="text" th:field="${colony.address}" class="form-control">
         </label>
-        <p th:errors="*{colony.address}"></p>
+        <p th:errors="${colony.address}"></p>
     </div>
 
     <div class="form-group">
         <label>Describe the colony location
-            <input type="text" name="locationDescription" th:field="${colony.locationDescription}" class="form-control">
+            <input type="text" th:field="${colony.locationDescription}" class="form-control">
         </label>
         <p th:errors="${colony.locationDescription}"></p>
     </div>
 
     <div class="form-group">
         <label>Est. cats in colony
-            <input type="text" name="numCatsInColony" th:field="${colony.numCatsInColony}" class="form-control">
+            <input type="text" th:field="${colony.numCatsInColony}" class="form-control">
         </label>
         <p th:errors="${colony.numCatsInColony}"></p>
     </div>
 
     <div class="form-group">
         <label> Is the property on private property?
-            <input type="text" name="isPrivateProperty" th:field="${colony.isPrivateProperty}" class="form-control">
+            <input type="text" th:field="${colony.isPrivateProperty}" class="form-control">
         </label>
         <p th:errors="${colony.isPrivateProperty}"></p>
     </div>
